@@ -1,0 +1,158 @@
+*{
+    margin: 0;
+    padding: 0;
+    /* overflow: hidden; */
+    box-sizing: border-box;
+}
+
+body{
+    background-color: rgb(150, 150, 150);
+    transition: 2s;
+    animation: fadeInAnimation ease 3s; 
+    animation-iteration-count: 1; 
+    animation-fill-mode: forwards;
+}
+
+@keyframes fadeInAnimation { 
+    0% { 
+        opacity: 0; 
+    } 
+    100% { 
+        opacity: 1; 
+    } 
+} 
+
+#startWrapper {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* border: 50px solid rgba(44, 44, 44, 0.295); */
+}
+
+
+#captainWrapper {
+    height: 150px;
+    width: 150px;
+    position: absolute;
+    top: 10px; 
+    right: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* border: 2px solid rgb(0, 38, 255) */
+}
+
+html {
+    overflow: hidden;
+}
+
+html::-webkit-scrollbar {
+    display: none;
+}
+
+.container img {
+    position: absolute;
+    height: 105vh;
+    width: 105vw;
+    left: -100px;
+}
+
+#captain {
+    position: absolute;
+    display: flex;
+    height: 300px;
+    width: 300px;
+    transform: scale(.5);
+    right: -2.5%;
+    top: -2.5%;
+}
+
+.captainAnimate {
+    position: absolute;
+    display: flex;
+    background: black;
+    height: 150px;
+    width: 100px;
+    right: 1.5%;
+    top: 3%;
+    opacity: .01;
+}
+
+
+.startButton {
+    position: absolute;
+    display: flex;
+    background: black;
+    height: 200px;
+    width: 600px;
+    margin-right: 400px;
+    margin-top: 300px;
+    /* right: 10px; */
+    /* border: 1px solid red; */
+    /* left: 32.5%;  */
+    /* top: 40%; */
+    /* transform: translate(-50%, -50%); */
+    opacity: .01;
+    transform: rotate(19deg);
+    z-index: 10;
+}
+
+#legoLogo {
+    position: absolute;
+    /* display: flex; */
+    /* height: 300px; */
+    /* width: 300px; */
+    transform: scale(.5);
+    left: -4%;
+    bottom: -2.5%;
+}
+
+#speech-bubble {
+	position: absolute;
+	background: #dddddd;
+    border-radius: .4em;
+    z-index: 0;
+    height: 100px;
+    width: 300px;
+    padding: 10px;
+    font-family: 'Roboto', sans-serif;
+    right: 160px;
+    top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 17.5px;
+    box-shadow: 0px 10px 10px 5px rgba(0, 0, 0, 0.192);
+    animation: speech ease 2s; 
+}
+
+/* animation: fadeInAnimation ease 3s; 
+animation-iteration-count: 1; 
+animation-fill-mode: forwards;
+} */
+
+@keyframes speech { 
+    0% { 
+        right: -1000px; 
+    } 
+    100% { 
+        right: 160px; 
+    } 
+} 
+
+#speech-bubble:after {
+	content: '';
+	position: absolute;
+	right: 0;
+	top: 50%;
+	width: 0;
+	height: 0;
+	border: 24px solid transparent;
+	border-left-color:#dddddd;
+	border-right: 0;
+	border-bottom: 0;
+	margin-top: -12px;
+    margin-right: -24px;
+}

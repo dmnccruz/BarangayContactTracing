@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html>
+	
+<head>
+
+	<!-- META TAGS -->
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="description" content="" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+	
+	<!-- CUSTOM SYLE SHEET -->
+
+	<link rel="stylesheet" href="assets/css/landingPageStyleLoaded.css"/>
+	
+	<!-- TITLE -->
+
+	<title>Welcome to Makati Contact Tracing survey.</title>
+
+</head>
+<body>
+
+	<div class="container">
+		<div id="scene2">
+			<div class="layer" data-depth="0.05"><img src="assets/images/parallax/1.png" alt="image"></div>
+			<div class="layer" data-depth="-0.1"><img src="assets/images/parallax/2.png" alt="image"></div>
+			<div class="layer" data-depth="-0.02"><img src="assets/images/parallax/3.png" alt="image"></div>
+			<div class="layer" data-depth="-0.1"><img src="assets/images/parallax/4.png" alt="image"></div>
+			<div class="layer" data-depth="-0.04"><img src="assets/images/parallax/5.png" alt="image"></div>
+			<div class="layer" data-depth="0.5"><img src="assets/images/parallax/6.png" alt="image"></div>
+			<div class="layer" data-depth="-0.05"><img src="assets/images/parallax/7.png" alt="image"></div>
+			<div class="layer" data-depth="-0.15"><img src="assets/images/parallax/8.png" alt="image"></div>
+			<div class="layer" data-depth="0.07"><img src="assets/images/parallax/9.png" alt="image"></div>
+			<div class="layer" data-depth="0.09"><img src="assets/images/parallax/10.png" alt="image"></div>
+			<div class="layer" data-depth="-0.09"><img src="assets/images/parallax/11.png" alt="image"></div>
+			<div class="layer" data-depth="-0.3"><img src="assets/images/parallax/12.png" alt="image"></div>
+		</div>
+	</div>
+
+	<div><img style="opacity: .5;"  id="legoLogo" src="assets/images/legoLogo.png" alt="image"></div>
+
+	<div id="startWrapper">
+
+		<div id="captainWrapper" onclick="redirectSurvey()" style="cursor: pointer;">
+			<a style="height: 100%; width: 100%; position: absolute;" onmouseover="animateCaptain()" onmouseout="animateCaptainReverse()" href="privatePage.html"></a>
+			<img id="captain1" src="assets/images/captain1.png" width="150" height="150" alt="image">
+			<img id="captain2" src="assets/images/captain2.png" width="150" height="150" alt="image">
+			<img id="captain3" src="assets/images/captain3.png" width="150" height="150" alt="image">
+			<img id="captain4" src="assets/images/captain4.png" width="150" height="150" alt="image">
+			<img id="captain5" src="assets/images/captain5.png" width="150" height="150" alt="image">
+			<img id="captain6" src="assets/images/captain6.png" width="150" height="150" alt="image">
+		</div>
+
+		<div id="speech-bubble">Are you an Admin? Click me to login to your dashboard and view contact tracing results for your barangay!</div>
+
+		<a onmouseover="animateStart()" onmouseout="animateStartReverse()" class="startButton" id="hoverStart" href="surveyPage.html"></a>
+		<img id="start1" style="position: absolute;" src="assets/images/parallax/start1.png" alt="image">
+		<img id="start2" style="position: absolute;" src="assets/images/parallax/start2.png" alt="image">
+		<img id="start3" style="position: absolute;" src="assets/images/parallax/start3.png" alt="image">
+		<img id="start4" style="position: absolute;" src="assets/images/parallax/start4.png" alt="image">
+		<img id="start5" style="position: absolute;" src="assets/images/parallax/start5.png" alt="image">
+		<img id="start6" style="position: absolute;" src="assets/images/parallax/start6.png" alt="image">
+		<img id="start7" style="position: absolute;" src="assets/images/parallax/start7.png" alt="image">
+	</div>
+
+	<!-- PARALLAX SCRIPT -->
+	<script src="assets/js/parallax.js"></script>
+
+	<!-- SCRIPTS -->
+	<!-- SCRIPTS -->
+	<!-- SCRIPTS -->
+	<!-- SCRIPTS -->
+	<!-- SCRIPTS -->
+
+	<script>
+		var scene2 = document.getElementById('scene2');
+		var parallax = new Parallax(scene2);
+
+		function redirectSurvey() {
+			window.location.href = 'surveyPage.html';
+		}
+	</script>
+
+	<script>
+		// document.getElementById('speech-bubble')
+	
+// ANIMATE 1
+
+		const start1 = document.getElementById('start1')
+		const start2 = document.getElementById('start2')
+		const start3 = document.getElementById('start3')
+		const start4 = document.getElementById('start4')
+		const start5 = document.getElementById('start5')
+		const start6 = document.getElementById('start6')
+		const start7 = document.getElementById('start7')
+
+		start2.style.display = "none"
+		start3.style.display = "none"
+		start4.style.display = "none"
+		start5.style.display = "none"
+		start6.style.display = "none"
+		start7.style.display = "none"
+
+		var to1;
+		var to2;
+		var to3;
+		var to4;
+		var to5;
+		var to6;
+		var to7;
+
+		function hideStarts() {
+			start1.style.display = "none"; 
+			start2.style.display = "none"; 
+			start3.style.display = "none"; 
+			start4.style.display = "none"; 
+			start5.style.display = "none"; 
+			start6.style.display = "none"; 
+			start7.style.display = "none"; 
+		}
+
+		function animateStart() {
+			 to1 = setTimeout(function(){
+				hideStarts()
+				start2.style.display = "flex"; 
+			}, 100);
+
+			 to2 = setTimeout(function(){
+				hideStarts()
+				start3.style.display = "flex"; 
+			}, 200);
+		
+			 to3 = setTimeout(function(){
+				hideStarts()
+				start4.style.display = "flex"; 
+			}, 300);
+		
+			 to4 = setTimeout(function(){
+				hideStarts()
+				start5.style.display = "flex"; 
+			}, 400);
+
+			 to5 = setTimeout(function(){
+				hideStarts()
+				start6.style.display = "flex"; 
+			}, 500);
+
+			 to6 = setTimeout(function(){
+				hideStarts()
+				start7.style.display = "flex";  
+			}, 600);
+		}
+
+		function animateStartReverse() {
+
+			clearTimeout(to1);
+			clearTimeout(to2);
+			clearTimeout(to3);
+			clearTimeout(to4);
+			clearTimeout(to5);
+			clearTimeout(to6);
+			clearTimeout(to7);
+			
+			setTimeout(function(){
+				hideStarts()
+				start6.style.display = "flex"; 
+			}, 100);
+
+			setTimeout(function(){
+				hideStarts()
+				start5.style.display = "flex"; 
+			}, 200);
+		
+			setTimeout(function(){
+				hideStarts()
+				start4.style.display = "flex"; 
+			}, 300);
+		
+			setTimeout(function(){
+				hideStarts()
+				start3.style.display = "flex"; 
+			}, 400);
+
+			setTimeout(function(){
+				hideStarts()
+				start2.style.display = "flex"; 
+			}, 500);
+
+			setTimeout(function(){
+				hideStarts()
+				start1.style.display = "flex";  
+			}, 600);
+		}
+
+		const captain1 = document.getElementById('captain1')
+		const captain2 = document.getElementById('captain2')
+		const captain3 = document.getElementById('captain3')
+		const captain4 = document.getElementById('captain4')
+		const captain5 = document.getElementById('captain5')
+		const captain6 = document.getElementById('captain6')
+
+		captain2.style.display = "none"
+		captain3.style.display = "none"
+		captain4.style.display = "none"
+		captain5.style.display = "none"
+		captain6.style.display = "none"
+
+		var capto1;
+		var capto2;
+		var capto3;
+		var capto4;
+		var capto5;
+		var capto6;
+
+		function hideCapts() {
+			captain1.style.display = "none"; 
+			captain2.style.display = "none"; 
+			captain3.style.display = "none"; 
+			captain4.style.display = "none"; 
+			captain5.style.display = "none"; 
+			captain6.style.display = "none"; 
+		}
+
+		animateCaptain
+
+		function animateCaptain() {
+
+			capto1 = setTimeout(function(){
+				hideCapts()
+				captain2.style.display = "flex"; 
+				console.log(1)
+			}, 100);
+
+			capto2 = setTimeout(function(){
+				hideCapts()
+				captain3.style.display = "flex"; 
+				console.log(2)
+			}, 200);
+		
+			capto3 = setTimeout(function(){
+				hideCapts()
+				captain4.style.display = "flex"; 
+				console.log(3)
+			}, 300);
+		
+			capto4 = setTimeout(function(){
+				hideCapts()
+				captain5.style.display = "flex"; 
+				console.log(4)
+			}, 400);
+
+			capto5 = setTimeout(function(){
+				hideCapts()
+				captain6.style.display = "flex"; 
+				console.log(5)
+			}, 500);
+		}
+
+		function animateCaptainReverse() {
+			clearTimeout(capto1);
+			clearTimeout(capto2);
+			clearTimeout(capto3);
+			clearTimeout(capto4);
+			clearTimeout(capto5);
+			clearTimeout(capto6);
+
+			setTimeout(function(){
+				hideCapts()
+				captain5.style.display = "flex";
+			}, 100);
+
+			setTimeout(function(){
+				hideCapts()
+				captain4.style.display = "flex"; 
+			}, 200);
+		
+			setTimeout(function(){
+				hideCapts()
+				captain3.style.display = "flex"; 
+			}, 300);
+		
+			setTimeout(function(){
+				hideCapts()
+				captain2.style.display = "flex"; 
+			}, 400);
+
+			setTimeout(function(){
+				hideCapts()
+				captain1.style.display = "flex"; 
+			}, 500);
+		}
+
+
+
+
+
+
+
+
+
+
+
+
+
+	</script>
+	<!-- SCRIPTS -->
+	<!-- SCRIPTS -->
+	<!-- SCRIPTS -->
+	<!-- SCRIPTS -->
+	<!-- SCRIPTS -->
+
+</body>
+</html> 
+
+
+
+

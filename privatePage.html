@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+	
+<head>
+
+	<!-- META TAGS -->
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="description" content=""/>
+	<meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+	<!-- CUSTOM FONT -->
+	<link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+	
+	<!-- CUSTOM SYLE SHEET -->
+
+	<link rel="stylesheet" href="assets/css/privateStyle.css"/>
+	
+
+	<!-- TITLE -->
+
+	<title>Surveillance Page</title>
+
+</head>
+<body>
+
+	<!-- <div><img id="bounds" src="assets/images/bounds.png" alt="image"></div> -->
+
+	<div class="container2">
+
+		<!-- ADMIN MAP -->
+		
+		<div class="mapContainer2">
+			<div id="map2"></div>
+		</div>
+
+		<div class="textContainer2">
+			<p id="infectedNo"></p>
+			<p id="healthyNo"></p>
+		</div>
+
+		<div class="navContainer">
+			
+			<button class="fetchSurvey" onclick="fetchSurvey()">Fetch</button>
+
+			<button class="removeIni" onclick="removeIni()">Remove</button><br><br>
+		
+			<!-- <div id="removeContainer"> -->
+			<input id="markerName" type="text" name="markerName" placeholder="Type Latitude and Longitude here" value=""><br>
+			<!-- </div> -->
+			<button id="removeMarker" onclick="removeMarker()">Accept</button>
+		
+			<!-- <div class="surveyCounter"> -->
+			<p id="healthyCountP">Healthy:</p><input type="number" id="healthyCount" name="healthyCount" value=0 disabled>
+			<p id="infCountP">Inf:</p><input type="number" id="infCount" name="infCount" value=0 disabled>
+			<!-- </div> -->
+
+			<div id="bldgCount">
+				<label for="bldgCount" id="bldgCountNoLabel"># of Buildings:</label>
+				<input id="bldgCountNo" type="number" name="bldgCount" placeholder="#">
+			</div>
+
+			<div class="logout" >
+				<button  id="logoutStyle" onclick="logout1()" ondblclick="logout2()">Logout</button>
+				<p id="doubleC"></p>
+			</div>
+		
+		</div>
+	</div>
+
+
+
+	<div id="loginPage">
+
+		<div id="speech-bubble">For demonstration purposes, you can login to each barangay by typing it's list position three times. Ex. Bangkal: 111, Bel-Air: 222, etc.</div>
+		<div id="captainWrapper" onclick="redirectSurvey()" style="cursor: pointer;">
+			<a style="height: 100%; width: 100%; position: absolute; z-index: 1;" onmouseover="animateCaptain()" onmouseout="animateCaptainReverse()" href="privatePage.html"></a>
+			<img id="captain1" src="assets/images/captain1.png" width="150" height="150" alt="image">
+			<img id="captain2" src="assets/images/captain2.png" width="150" height="150" alt="image">
+			<img id="captain3" src="assets/images/captain3.png" width="150" height="150" alt="image">
+			<img id="captain4" src="assets/images/captain4.png" width="150" height="150" alt="image">
+			<img id="captain5" src="assets/images/captain5.png" width="150" height="150" alt="image">
+			<img id="captain6" src="assets/images/captain6.png" width="150" height="150" alt="image">
+		</div>
+
+
+
+		<div id="breakContainer">
+			<div id="breakAnimate" onmouseover="breakStart()" onmouseout="breakStartReverse()"></div>
+			<div id="break1" class="breakage"><img src="assets/images/parallax/break1.png" alt="image" width="100%"></div>
+			<div id="break2" class="breakage"><img src="assets/images/parallax/break2.png" alt="image" width="100%"></div>
+			<div id="break3" class="breakage"><img src="assets/images/parallax/break3.png" alt="image" width="100%"></div>
+			<div id="break4" class="breakage"><img src="assets/images/parallax/break4.png" alt="image" width="100%"></div>
+			<div id="break5" class="breakage"><img src="assets/images/parallax/break5.png" alt="image" width="100%"></div>
+		</div>
+
+		<div><img style="opacity: .25;" id="legoLogo" src="assets/images/legoLogo.png" alt="image"></div>
+
+		<div class="barangayContainer">
+			<label for="barangay" id="barangaySelect">Select your barangay:</label><br><br>
+				<select name="barangays" id="barangays" required>
+					<!-- <option value="" disabled selected>Select your Barangay</option> -->
+					<option value="bangkal">Bangkal</option>
+					<option value="belAir">Bel-Air</option>
+					<option value="carmona">Carmona</option>
+					<option value="cembo">Cembo</option>
+					<option value="comembo">Comembo</option>
+					<option value="dasmarinas">Dasmarinas</option>
+					<option value="eastRembo">East Rembo</option>
+					<option value="forbesPark">Forbes Park</option>
+					<option value="guadalupeNuevo">Guadalupe Nuevo</option>
+					<option value="guadalupeViejo">Guadalupe Viejo</option>
+					<option value="kasilawan">Kasilawan</option>
+					<option value="laPaz">La Paz</option>
+					<option value="magallanes">Magallanes</option>
+					<option value="olympia">Olympia</option>
+					<option value="palanan">Palanan</option>
+					<option value="pembo">Pembo</option>
+					<option value="pinagkaisahan">Pinagkaisahan</option>
+					<option value="pioDelPilar">Pio Del Pilar</option>
+					<option value="pitogo">Pitogo</option>
+					<option value="poblacion">Poblacion</option>
+					<option value="postProperNorthside">Post Proper Northside</option>
+					<option value="postProperSouthside">Post Proper Southside</option>
+					<option value="rizal">Rizal</option>
+					<option value="sanAntonio">San Antonio</option>
+					<option value="sanIsidro">San Isidro</option>
+					<option value="sanLorenzo">San Lorenzo</option>
+					<option value="singkamas">Singkamas</option>
+					<option value="southCembo">South Cembo</option>
+					<option value="staCruz">Sta. Cruz</option>
+					<option value="tejeros">Tejeros</option>
+					<option value="urdaneta">Urdaneta</option>
+					<option value="valenzuela">Valenzuela</option>
+					<option value="westRembo">West Rembo</option>
+				</select><br><br>
+				<input id="authent" type="password" name="authent" placeholder="Type Authentication code here" value=""><br><br>
+				<button class="login" onclick="login()">Login</button><br>
+				<p id="failLogin"></p>
+
+		</div>
+	</div>
+
+
+
+
+
+	
+	<!-- SCRIPTS -->
+	<!-- SCRIPTS -->
+	<!-- SCRIPTS -->
+	<!-- SCRIPTS -->
+	<!-- SCRIPTS -->
+	
+	<script src="assets/js/privatePage.js"></script>
+
+	<script async defer
+	src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCFaVtDi-0kmQMpxWThH-8HA_PU2jwUm8M&libraries=places&callback=initMap">
+	</script>
+
+	<!-- SCRIPTS -->
+	<!-- SCRIPTS -->
+	<!-- SCRIPTS -->
+	<!-- SCRIPTS -->
+	<!-- SCRIPTS -->
+
+</body>
+</html> 
+
+
+
+

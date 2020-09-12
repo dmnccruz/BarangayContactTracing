@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+	
+<head>
+
+	<!-- META TAGS -->
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="description" content="" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	
+	<!-- CUSTOM FONT -->
+	<link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+
+	<!-- CUSTOM SYLE SHEET -->
+
+	<link rel="stylesheet" href="assets/css/style.css"/>
+	
+
+	<!-- TITLE -->
+
+	<title>Contact Tracing Survey</title>
+
+</head>
+<body>
+	<div class="container1">
+		<h3 id="stepHead">Contact-Tracing Survey Steps</h3><br>
+		
+		<div id="stepAnimator1" class="stepAnimator" onmouseover="animateStep1()" onmouseout="animateStep1Reverse()"></div>
+		<div id="stepAnimator2" class="stepAnimator" onmouseover="animateStep2()" onmouseout="animateStep2Reverse()"></div>
+		<div id="stepAnimator3" class="stepAnimator" onmouseover="animateStep3()" onmouseout="animateStep3Reverse()"></div>
+
+		<div class="steps1" id="1a"><img src="assets/images/1a.png" alt="image"></div>
+		<div class="steps1" id="1b"><img src="assets/images/1b.png" alt="image"></div>
+		<div class="steps1" id="1c"><img src="assets/images/1c.png" alt="image"></div>
+		<div class="steps1" id="1d"><img src="assets/images/1d.png" alt="image"></div>
+		<div class="steps1" id="1e"><img src="assets/images/1e.png" alt="image"></div>
+
+		<div class="steps2" id="2a"><img src="assets/images/2a.png" alt="image"></div>
+		<div class="steps2" id="2b"><img src="assets/images/2b.png" alt="image"></div>
+		<div class="steps2" id="2c"><img src="assets/images/2c.png" alt="image"></div>
+		<div class="steps2" id="2d"><img src="assets/images/2d.png" alt="image"></div>
+		<div class="steps2" id="2e"><img src="assets/images/2e.png" alt="image"></div>
+
+		<div class="steps3" id="3a"><img src="assets/images/3a.png" alt="image"></div>
+		<div class="steps3" id="3b"><img src="assets/images/3b.png" alt="image"></div>
+		<div class="steps3" id="3c"><img src="assets/images/3c.png" alt="image"></div>
+		<div class="steps3" id="3d"><img src="assets/images/3d.png" alt="image"></div>
+		<div class="steps3" id="3e"><img src="assets/images/3e.png" alt="image"></div>
+	</div>
+
+	<div class="container2">
+
+		<!-- CONTACT TRACING FORM -->
+
+		<div class="formContainer">
+			<form id="infoForm">
+			<h1>Survey Form</h1>
+			<label for="date">Date:</label><br>
+			<input type="date" id="date" name="date" min="1970-01-02"><br><br>
+
+			<label for="barangay">Barangay:</label><br>
+			<select name="barangays" id="barangays" autofocus required oninput="verification()">
+				<option value="" disabled selected>Select your Barangay</option>
+				<option value="viewAll">View Boundaries</option>
+				<option value="bangkal">Bangkal</option>
+				<option value="belAir">Bel-Air</option>
+				<option value="carmona">Carmona</option>
+				<option value="cembo">Cembo</option>
+				<option value="comembo">Comembo</option>
+				<option value="dasmarinas">Dasmarinas</option>
+				<option value="eastRembo">East Rembo</option>
+				<option value="forbesPark">Forbes Park</option>
+				<option value="guadalupeNuevo">Guadalupe Nuevo</option>
+				<option value="guadalupeViejo">Guadalupe Viejo</option>
+				<option value="kasilawan">Kasilawan</option>
+				<option value="laPaz">La Paz</option>
+				<option value="magallanes">Magallanes</option>
+				<option value="olympia">Olympia</option>
+				<option value="palanan">Palanan</option>
+				<option value="pembo">Pembo</option>
+				<option value="pinagkaisahan">Pinagkaisahan</option>
+				<option value="pioDelPilar">Pio Del Pilar</option>
+				<option value="pitogo">Pitogo</option>
+				<option value="poblacion">Poblacion</option>
+				<option value="postProperNorthside">Post Proper Northside</option>
+				<option value="postProperSouthside">Post Proper Southside</option>
+				<option value="rizal">Rizal</option>
+				<option value="sanAntonio">San Antonio</option>
+				<option value="sanIsidro">San Isidro</option>
+				<option value="sanLorenzo">San Lorenzo</option>
+				<option value="singkamas">Singkamas</option>
+				<option value="southCembo">South Cembo</option>
+				<option value="staCruz">Sta. Cruz</option>
+				<option value="tejeros">Tejeros</option>
+				<option value="urdaneta">Urdaneta</option>
+				<option value="valenzuela">Valenzuela</option>
+				<option value="westRembo">West Rembo</option>
+			</select><br><br>
+
+			<label for="fname">Name of Person in charge of Household/Building:</label><br>
+			<input type="text" id="fname" name="fname" placeholder="full name" pattern="[A-Za-z]+" value="" required oninput="verification()"><br><br>
+
+			<label for="address">Full Address:</label><br>
+			<input type="text" id="address" name="address" placeholder="house/bldg. no., street, subdivision, brgy., city" value="" required oninput="verification()">
+			<input id="verify" type="button" value="Pin Address">
+
+			<p><small>You can drag the marker if your address was not accurately pinned.</small></p>
+			<p><small id="latInfo">Latitude:</small></p>
+			<p><small id="lngInfo">Longitude:</small></p>
+			<br>
+
+			<label for="residents">Number of occupants:</label><br>
+			<input type="number" id="residents" name="residents" placeholder="How many occupants?" required oninput="verification()"><br><br>
+
+			<label for="phone">Mobile number:</label><br>
+			<input type="number" id="phone" name="phone" placeholder="09__-____-___" required oninput="verification()"><br><br>
+
+			<label for="temp">Highest Temperature (Please take the temperature <br>of all occupants and input below the highest recorded):</label><br>
+			<select name="temp" id="temp" required oninput="verification()">
+				<option value="" disabled selected>Select applicable option</option>
+				<option value="normal">36.3°C - 37.4°C </option>
+				<option value="fever">37.5°C - 38.9°C</option>
+				<option value="highFever">39°C - 39.9°C</option>
+				<option value="veryHighFever">40°C and above</option>
+			</select><br><br>
+
+			<label for="travel" id="travel">Has any of your occupants travelled to other countries in the last 28 days?</label><br>
+			<input type="radio" id="travelYes" name="choiceTravel" value="yes" required oninput="verification()">
+			<label for="yes">Yes</label>
+			<input type="radio" id="travelNo" name="choiceTravel" value="no" required oninput="verification()">
+			<label for="no">No</label><br><br>
+
+			<label for="symptoms" id="symptoms">Has any of your occupants show the following symptoms <br>in the last 28 days? fever, sore throat, dry cough, headache,<br> loss of taste/smell, difficulty in breathing:</label><br>
+			<input type="radio" id="sympYes" name="choiceSymptoms" value="yes" required oninput="verification()">
+			<label for="male">Yes</label>
+			<input type="radio" id="sympNo" name="choiceSymptoms" value="no" required oninput="verification()">
+			<label for="female">No</label><br><br>
+
+			<input type="button" id='confirm' value="Confirm">
+			<input type="button" id='submit' value="Submit"><a id='successForm' ></a>
+			<!-- <input type="reset" id='reset'> -->
+			</form> 
+		</div>
+
+		<!-- PUBLIC MAP -->
+
+		<div class="mapContainer">
+			<div id="map"></div>
+		</div>
+		
+	</div>
+
+
+	<!-- HIDER MAP -->
+
+	<div id="map3" style="display: none;"></div>
+
+	<!-- SCRIPTS -->
+	<!-- SCRIPTS -->
+	<!-- SCRIPTS -->
+	<!-- SCRIPTS -->
+	<!-- SCRIPTS -->
+
+	<script>
+
+	window.onbeforeunload = function () {
+		window.scrollTo(0, 0);
+		}
+	</script>
+
+	<script src="assets/js/main.js"></script>
+
+	<script async defer
+	src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCFaVtDi-0kmQMpxWThH-8HA_PU2jwUm8M&libraries=places&callback=initMap">
+	</script>
+
+
+	<!-- SCRIPTS -->
+	<!-- SCRIPTS -->
+	<!-- SCRIPTS -->
+	<!-- SCRIPTS -->
+	<!-- SCRIPTS -->
+
+</body>
+</html> 
+
+
+
+
